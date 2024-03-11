@@ -39,7 +39,8 @@ button.addEventListener('click', function() {
 // Gioco dei dadi
 // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 // Stabilire il vincitore, in base a chi fa il punteggio più alto.
-const dado = [1, 2, 3, 4, 5, 6];
+const images = [1, 2, 3, 4, 5, 6];
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -51,6 +52,14 @@ let result2 = document.getElementById('result-2');
 let button2 = document.getElementById('btn-2');
 
 button2.addEventListener('click', function(){
+    for(let i = 0; i < images.length; i++){
+        
+        let img = document.createElement('img');
+        img.setAttribute('src',`images/${images[i]}.svg`);
+        img.setAttribute('alt', images[i]);
+        img.className = 'img-fluid d-block';
+        result2.append(img);
+    }
     if(userNumber > computerNumber){
     result2.innerHTML = 'Hai vinto!';
     } else if(userNumber < computerNumber) {
