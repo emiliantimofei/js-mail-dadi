@@ -52,14 +52,14 @@ let result2 = document.getElementById('result-2');
 let button2 = document.getElementById('btn-2');
 
 button2.addEventListener('click', function(){
-    for(let i = 0; i < images.length; i++){
+    // for(let i = 0; i < images.length; i++){
         
-        let img = document.createElement('img');
-        img.setAttribute('src',`images/${images[i]}.svg`);
-        img.setAttribute('alt', images[i]);
-        img.className = 'img-fluid d-block';
-        result2.append(img);
-    }
+    //     let img = document.createElement('img');
+    //     img.setAttribute('src',`images/${images[i]}.svg`);
+    //     img.setAttribute('alt', images[i]);
+    //     img.className = 'img-fluid d-block';
+    //     result2.append(img);
+    // }
     if(userNumber > computerNumber){
     result2.innerHTML = 'Hai vinto!';
     } else if(userNumber < computerNumber) {
