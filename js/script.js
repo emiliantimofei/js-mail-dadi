@@ -15,22 +15,24 @@
 // 4. torniamo a scrivere in italiano
 // 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 
-// costante bottone - il bottone con addListener 
-const boxMail = ['pippo@gmail.com', 'pluto@gmail.com', 'paperino@gmail.com'];
-let userMail = document.getElementById('userMail').value;
-let trovato = false;
+// creo boxMail userMail che inserisce l'utente trovato in false ed il bottone collegato 
+
 let button = document.querySelector('.btn');
 
 button.addEventListener('click', function() {
-        for (let i = 0; i < boxMail.length; i++) {
-            if (userMail.toLowerCase() === boxMail.toLowerCase()) {
-                trovato = true;
-            }
+    const boxMail = ['pippo@gmail.com', 'pluto@gmail.com', 'paperino@gmail.com'];
+    let userMail = document.getElementById('userMail').value;
+    let trovato = false;
+
+    for (let i = 0; i < boxMail.length; i++) {
+        if (userMail === boxMail[i]) {
+            trovato = true;
         }
-        const result = document.getElementById('box');
-        if (trovato) {
-            result.innerHTML = 'Disponibile';
-        } else {
-            result.innerHTML = 'Non Disponibile';
-        }
-    })
+    }
+    let result = document.getElementById('result');
+    if (trovato === true) {
+        result.innerHTML = 'Disponibile';
+    } else {
+        result.innerHTML = 'Non Disponibile';
+    }
+})
